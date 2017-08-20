@@ -1,0 +1,23 @@
+inherited PrincipalView: TPrincipalView
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object MenuBar1: TMenuBar
+    Size.Width = 640.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Telas: TMenuItem
+      Text = 'Telas'
+      object MenuItemTelaDesktop: TMenuItem
+        Locked = True
+        Text = 'Desktop'
+        OnClick = MenuItemTelaDesktopClick
+      end
+      object MenuItemTelaApp: TMenuItem
+        Locked = True
+        Text = 'App'
+        OnClick = MenuItemTelaAppClick
+      end
+    end
+  end
+end

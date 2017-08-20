@@ -1,0 +1,5 @@
+inherited BaseDesktopView: TBaseDesktopView
+  ClientHeight = 480
+  ClientWidth = 640
+  DesignerMasterStyle = 0
+end

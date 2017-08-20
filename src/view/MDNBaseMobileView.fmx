@@ -1,0 +1,5 @@
+inherited BaseMobileView: TBaseMobileView
+  ClientHeight = 550
+  ClientWidth = 350
+  DesignerMasterStyle = 0
+end
