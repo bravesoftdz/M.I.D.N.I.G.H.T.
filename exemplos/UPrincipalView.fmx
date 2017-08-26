@@ -1,5 +1,6 @@
 inherited PrincipalView: TPrincipalView
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   DesignerMasterStyle = 0
   object MenuBar1: TMenuBar
     Size.Width = 640.000000000000000000
@@ -17,6 +18,11 @@ inherited PrincipalView: TPrincipalView
         Locked = True
         Text = 'App'
         OnClick = MenuItemTelaAppClick
+      end
+      object MenuItemDispositivo: TMenuItem
+        Locked = True
+        Text = 'Dispositivo'
+        OnClick = MenuItemDispositivoClick
       end
     end
   end

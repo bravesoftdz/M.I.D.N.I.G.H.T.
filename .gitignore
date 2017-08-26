@@ -66,4 +66,4 @@ __recovery/
 *.stat
 
 # Específico do projeto
-# bin/
+bin/

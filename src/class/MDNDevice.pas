@@ -17,17 +17,16 @@ uses
 type
   TDevice=class(TBaseClass)
   private
-    FIMEI: String;
-    procedure SetIMEI(const Value: String);
     function FindIMEI: String;
     function FindIMEIAndroid: String;
     function FindIMEIiOS: String;
     function FindIMEILinux: String;
     function FindIMEIMacOS: String;
     function FindIMEIWindows: String;
+    function GetIMEI: String;
   public
     constructor Create;
-    property IMEI: String read FIMEI write SetIMEI;
+    property IMEI: String read GetIMEI;
   end;
 
 implementation
@@ -37,7 +36,6 @@ implementation
 constructor TDevice.Create;
 begin
   inherited;
-  Self.IMEI := FindIMEI;
 end;
 
 function TDevice.FindIMEI: String;
@@ -66,28 +64,27 @@ end;
 function TDevice.FindIMEIAndroid: String;
 var
   {$IFDEF ANDROID}
-  obj: JObject;
-  tm: JTelephonyManager;
+  Obj: JObject;
+  TM: JTelephonyManager;
   {$ENDIF}
-  identifier: String;
+  IMEI: String;
 begin
-  identifier := EmptyStr;
+  IMEI := EmptyStr;
   {$IFDEF ANDROID}
-  obj := SharedActivityContext.getSystemService(TJContext.JavaClass.TELEPHONY_SERVICE);
-  if obj <> nil then
+  Obj := SharedActivityContext.getSystemService(TJContext.JavaClass.TELEPHONY_SERVICE);
+  if Obj <> nil then
   begin
-    tm := TJTelephonyManager.Wrap( (obj as ILocalObject).GetObjectID );
-    if tm <> nil then
-      identifier := JStringToString(tm.getDeviceId);
+    TM := TJTelephonyManager.Wrap( (Obj as ILocalObject).GetObjectID );
+    if TM <> nil then
+      IMEI := JStringToString(TM.getDeviceId);
   end;
-  if identifier = '' then
-    identifier := JStringToString(
+  if IMEI = '' then
+    IMEI := JStringToString(
       TJSettings_Secure.JavaClass.getString(
         SharedActivity.getContentResolver,
         TJSettings_Secure.JavaClass.ANDROID_ID));
   {$ENDIF ANDROID}
-
-  Result := identifier;
+  Result := IMEI;
 end;
 
 function TDevice.FindIMEIiOS: String;
@@ -110,9 +107,9 @@ begin
   raise Exception.Create('Not Supported');
 end;
 
-procedure TDevice.SetIMEI(const Value: String);
+function TDevice.GetIMEI: String;
 begin
-  FIMEI := Value;
+  Result:= FindIMEI;
 end;
 
 end.
