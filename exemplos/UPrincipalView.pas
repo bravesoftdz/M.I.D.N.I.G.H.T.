@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  MDNBaseDesktopView, FMX.Menus, FMX.Controls.Presentation;
+  MDN.BaseDesktopView, FMX.Menus, FMX.Controls.Presentation;
 
 type
   TPrincipalView = class(TBaseDesktopView)
@@ -32,7 +32,7 @@ implementation
 
 {$R *.fmx}
 
-uses MDNBaseMobileView, MDNBaseView, UDispositivoView;
+uses MDN.BaseMobileView, MDN.BaseView, UDispositivoView;
 
 procedure TPrincipalView.FormCreate(Sender: TObject);
 begin

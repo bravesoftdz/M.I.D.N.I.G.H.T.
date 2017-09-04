@@ -3,13 +3,13 @@ program ExemploGeral;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  MDNBaseView in '..\src\view\MDNBaseView.pas' {BaseView},
-  MDNBaseDesktopView in '..\src\view\MDNBaseDesktopView.pas' {BaseDesktopView},
-  MDNBaseMobileView in '..\src\view\MDNBaseMobileView.pas' {BaseMobileView},
+  MDN.BaseView in '..\src\view\MDN.BaseView.pas' {BaseView},
+  MDN.BaseDesktopView in '..\src\view\MDN.BaseDesktopView.pas' {BaseDesktopView},
+  MDN.BaseMobileView in '..\src\view\MDN.BaseMobileView.pas' {BaseMobileView},
   UPrincipalView in 'UPrincipalView.pas' {PrincipalView},
   UDispositivoView in 'UDispositivoView.pas' {DispositivoView},
-  MDNBaseClass in '..\src\class\MDNBaseClass.pas',
-  MDNDevice in '..\src\class\MDNDevice.pas';
+  MDN.BaseClass in '..\src\class\MDN.BaseClass.pas',
+  MDN.Device in '..\src\class\MDN.Device.pas';
 
 {$R *.res}
 

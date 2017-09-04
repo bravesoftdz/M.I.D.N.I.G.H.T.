@@ -3,9 +3,9 @@ unit UDispositivoView;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  MDNBaseMobileView, FMX.Edit, FMX.Controls.Presentation, FMX.Layouts;
+  MDN.BaseMobileView, FMX.Edit, FMX.Controls.Presentation, FMX.Layouts;
 
 type
   TDispositivoView = class(TBaseMobileView)
@@ -26,7 +26,7 @@ implementation
 
 {$R *.fmx}
 
-uses MDNDevice;
+uses MDN.Device;
 
 procedure TDispositivoView.FormCreate(Sender: TObject);
 var

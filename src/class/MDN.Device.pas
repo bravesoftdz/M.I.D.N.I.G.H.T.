@@ -1,4 +1,4 @@
-unit MDNDevice;
+unit MDN.Device;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   Androidapi.JNI.Provider,
   Androidapi.JNIBridge,
   {$ENDIF ANDROID}
-  MDNBaseClass,
+  MDN.BaseClass,
   SysUtils;
 
 type

@@ -1,4 +1,4 @@
-unit MDNBaseClass;
+unit MDN.BaseClass;
 
 interface
 

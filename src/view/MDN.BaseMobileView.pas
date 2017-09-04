@@ -1,14 +1,14 @@
-unit MDNBaseDesktopView;
+unit MDN.BaseMobileView;
 
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  MDNBaseView;
+  MDN.BaseView;
 
 type
-  TBaseDesktopView = class(TBaseView)
+  TBaseMobileView = class(TBaseView)
   private
     { Private declarations }
   public
@@ -16,7 +16,7 @@ type
   end;
 
 var
-  BaseDesktopView: TBaseDesktopView;
+  BaseMobileView: TBaseMobileView;
 
 implementation
 

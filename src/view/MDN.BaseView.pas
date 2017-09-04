@@ -1,4 +1,4 @@
-unit MDNBaseView;
+unit MDN.BaseView;
 
 interface
 

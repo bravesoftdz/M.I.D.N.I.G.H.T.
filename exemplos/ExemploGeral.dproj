@@ -311,15 +311,15 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\src\view\MDNBaseView.pas">
+        <DCCReference Include="..\src\view\MDN.BaseView.pas">
             <Form>BaseView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\src\view\MDNBaseDesktopView.pas">
+        <DCCReference Include="..\src\view\MDN.BaseDesktopView.pas">
             <Form>BaseDesktopView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\src\view\MDNBaseMobileView.pas">
+        <DCCReference Include="..\src\view\MDN.BaseMobileView.pas">
             <Form>BaseMobileView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
@@ -331,8 +331,8 @@
             <Form>DispositivoView</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\src\class\MDNBaseClass.pas"/>
-        <DCCReference Include="..\src\class\MDNDevice.pas"/>
+        <DCCReference Include="..\src\class\MDN.BaseClass.pas"/>
+        <DCCReference Include="..\src\class\MDN.Device.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -407,6 +407,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\bin\Win32\Debug\ExemploGeral.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>ExemploGeral.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\bin\Android\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles">
                     <Platform Name="Android">
                         <Overwrite>true</Overwrite>
@@ -415,12 +421,6 @@
                 <DeployFile LocalName="..\bin\Android\Debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile">
                     <Platform Name="Android">
                         <RemoteName>classes.dex</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\bin\Win32\Debug\ExemploGeral.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>ExemploGeral.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
