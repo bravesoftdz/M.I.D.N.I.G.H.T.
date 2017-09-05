@@ -9,7 +9,9 @@ uses
   UPrincipalView in 'UPrincipalView.pas' {PrincipalView},
   UDispositivoView in 'UDispositivoView.pas' {DispositivoView},
   MDN.BaseClass in '..\src\class\MDN.BaseClass.pas',
-  MDN.Device in '..\src\class\MDN.Device.pas';
+  MDN.Device in '..\src\class\MDN.Device.pas',
+  MDN.Criptografy in '..\src\class\MDN.Criptografy.pas',
+  UCriptografiaView in 'UCriptografiaView.pas' {CriptografiaView};
 
 {$R *.res}
 

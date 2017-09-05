@@ -24,6 +24,11 @@ inherited PrincipalView: TPrincipalView
         Text = 'Dispositivo'
         OnClick = MenuItemDispositivoClick
       end
+      object MenuItemCriptografia: TMenuItem
+        Locked = True
+        Text = 'Criptografia'
+        OnClick = MenuItemCriptografiaClick
+      end
     end
   end
 end

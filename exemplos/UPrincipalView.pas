@@ -14,11 +14,13 @@ type
     MenuItemTelaDesktop: TMenuItem;
     MenuItemTelaApp: TMenuItem;
     MenuItemDispositivo: TMenuItem;
+    MenuItemCriptografia: TMenuItem;
     procedure MenuItemTelaAppClick(Sender: TObject);
     procedure MenuItemTelaDesktopClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItemDispositivoClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure MenuItemCriptografiaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +34,7 @@ implementation
 
 {$R *.fmx}
 
-uses MDN.BaseMobileView, MDN.BaseView, UDispositivoView;
+uses MDN.BaseMobileView, MDN.BaseView, UDispositivoView, UCriptografiaView;
 
 procedure TPrincipalView.FormCreate(Sender: TObject);
 begin
@@ -47,6 +49,19 @@ begin
     DispositivoView.Free;
 end;
 
+procedure TPrincipalView.MenuItemCriptografiaClick(Sender: TObject);
+begin
+  inherited;
+  if not Assigned(CriptografiaView) then
+    CriptografiaView := TCriptografiaView.Create(Self);
+  {$IFDEF MSWINDOWS}
+  CriptografiaView.ShowModal;
+  {$ELSE}
+  CriptografiaView.Show;
+  {$ENDIF}
+  CriptografiaView.Free;
+end;
+
 procedure TPrincipalView.MenuItemDispositivoClick(Sender: TObject);
 begin
   inherited;
@@ -57,6 +72,7 @@ begin
   {$ELSE}
   DispositivoView.Show;
   {$ENDIF}
+  DispositivoView.Free;
 end;
 
 procedure TPrincipalView.MenuItemTelaAppClick(Sender: TObject);
