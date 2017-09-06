@@ -10,17 +10,20 @@ uses
 type
   TPrincipalView = class(TBaseDesktopView)
     MenuBar1: TMenuBar;
-    Telas: TMenuItem;
+    MenuItemDesktop: TMenuItem;
     MenuItemTelaDesktop: TMenuItem;
     MenuItemTelaApp: TMenuItem;
     MenuItemDispositivo: TMenuItem;
     MenuItemCriptografia: TMenuItem;
+    MenuItemMobile: TMenuItem;
+    MenuItemMovelTelaToolbar: TMenuItem;
     procedure MenuItemTelaAppClick(Sender: TObject);
     procedure MenuItemTelaDesktopClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure MenuItemDispositivoClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure MenuItemCriptografiaClick(Sender: TObject);
+    procedure MenuItemMovelTelaToolbarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +37,8 @@ implementation
 
 {$R *.fmx}
 
-uses MDN.BaseMobileView, MDN.BaseView, UDispositivoView, UCriptografiaView;
+uses MDN.BaseMobileView, MDN.BaseView, UDispositivoView, UCriptografiaView,
+  MDN.BaseMobileToolbarView;
 
 procedure TPrincipalView.FormCreate(Sender: TObject);
 begin
@@ -73,6 +77,14 @@ begin
   DispositivoView.Show;
   {$ENDIF}
   DispositivoView.Free;
+end;
+
+procedure TPrincipalView.MenuItemMovelTelaToolbarClick(Sender: TObject);
+begin
+  inherited;
+  if not Assigned(BaseMobileToolbarView) then
+    BaseMobileToolbarView := TBaseMobileToolbarView.Create(Self);
+  BaseMobileToolbarView.Show;
 end;
 
 procedure TPrincipalView.MenuItemTelaAppClick(Sender: TObject);

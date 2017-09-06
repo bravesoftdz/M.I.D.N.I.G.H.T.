@@ -7,27 +7,35 @@ inherited PrincipalView: TPrincipalView
     Size.Height = 24.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object Telas: TMenuItem
-      Text = 'Telas'
+    object MenuItemDesktop: TMenuItem
+      Text = 'Desktop'
       object MenuItemTelaDesktop: TMenuItem
         Locked = True
         Text = 'Desktop'
         OnClick = MenuItemTelaDesktopClick
+      end
+      object MenuItemCriptografia: TMenuItem
+        Locked = True
+        Text = 'Criptografia'
+        OnClick = MenuItemCriptografiaClick
+      end
+    end
+    object MenuItemMobile: TMenuItem
+      Text = 'M'#243'vel'
+      object MenuItemDispositivo: TMenuItem
+        Locked = True
+        Text = 'Dispositivo'
+        OnClick = MenuItemDispositivoClick
       end
       object MenuItemTelaApp: TMenuItem
         Locked = True
         Text = 'App'
         OnClick = MenuItemTelaAppClick
       end
-      object MenuItemDispositivo: TMenuItem
+      object MenuItemMovelTelaToolbar: TMenuItem
         Locked = True
-        Text = 'Dispositivo'
-        OnClick = MenuItemDispositivoClick
-      end
-      object MenuItemCriptografia: TMenuItem
-        Locked = True
-        Text = 'Criptografia'
-        OnClick = MenuItemCriptografiaClick
+        Text = 'Barra de Ferramentas'
+        OnClick = MenuItemMovelTelaToolbarClick
       end
     end
   end

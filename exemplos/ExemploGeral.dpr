@@ -11,7 +11,8 @@ uses
   MDN.BaseClass in '..\src\class\MDN.BaseClass.pas',
   MDN.Device in '..\src\class\MDN.Device.pas',
   MDN.Criptografy in '..\src\class\MDN.Criptografy.pas',
-  UCriptografiaView in 'UCriptografiaView.pas' {CriptografiaView};
+  UCriptografiaView in 'UCriptografiaView.pas' {CriptografiaView},
+  MDN.BaseMobileToolbarView in '..\src\view\MDN.BaseMobileToolbarView.pas' {BaseMobileToolbarView};
 
 {$R *.res}
 
