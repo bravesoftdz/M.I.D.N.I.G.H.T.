@@ -60,9 +60,7 @@ inherited BaseMobileToolbarView: TBaseMobileToolbarView
           Size.PlatformDefault = False
           TextSettings.Font.Family = 'Roboto'
           TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
           Text = 'Title'
-          TabOrder = 2
         end
       end
     end
